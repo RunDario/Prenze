@@ -443,7 +443,7 @@
   <div id="moneyLayer" class="money-layer"></div>
 
   <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxl6U1a_s15h348z665F7vC84fJ56oL4N9e-p880dJSuM6p_27b9dG2J6n3f8d5080Q/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzN81W9AJDKL9nPci1DDAiU8lUe-bC4l0DS6UeRnjJ2ZQfKxQsKQHWzS6GyZlNXZdQ/exec";
 
     const DEFAULT_ATHLETES = [
       "Alessandra",
@@ -521,11 +521,10 @@
       if (!ctx) return;
       const now = ctx.currentTime;
 
-      // Primo tintinnio ("cha")
       const osc1 = ctx.createOscillator();
       const gain1 = ctx.createGain();
       osc1.type = "triangle";
-      osc1.frequency.setValueAtTime(987.77, now); // B5
+      osc1.frequency.setValueAtTime(987.77, now);
       gain1.gain.setValueAtTime(0.18, now);
       gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
       osc1.connect(gain1);
@@ -533,12 +532,11 @@
       osc1.start(now);
       osc1.stop(now + 0.12);
 
-      // Secondo tintinnio brillante ("ching!")
       const osc2 = ctx.createOscillator();
       const gain2 = ctx.createGain();
       osc2.type = "sine";
-      osc2.frequency.setValueAtTime(1318.51, now + 0.1); // E6
-      osc2.frequency.setValueAtTime(1567.98, now + 0.16); // G6
+      osc2.frequency.setValueAtTime(1318.51, now + 0.1);
+      osc2.frequency.setValueAtTime(1567.98, now + 0.16);
       gain2.gain.setValueAtTime(0.22, now + 0.1);
       gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.55);
       osc2.connect(gain2);
